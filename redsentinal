@@ -1,0 +1,7 @@
+#!/bin/sh
+# Run from the project folder so relative paths (config, data files) work.
+# To keep your current directory instead, run: REDSENTINAL_KEEP_CWD=1 redsentinal
+if [ -z "${REDSENTINAL_KEEP_CWD:-}" ]; then
+    cd "/home/autox/Desktop/RedSentinal" || exit 1
+fi
+exec "/home/autox/Desktop/RedSentinal/.venv/bin/python" "/home/autox/Desktop/RedSentinal/main.py" "$@"
